@@ -42,3 +42,40 @@ h1, h2, h3, h4, h5, h6, .font-display {
   outline: 2px solid #F0418C;
   outline-offset: 2px;
 }
+
+/* Desktop parallax matching original site's Elementor fixed-attachment bands */
+.parallax-bg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+@media (min-width: 1024px) {
+  .parallax-bg {
+    background-attachment: fixed;
+  }
+}
+
+/* Subtle Ken Burns zoom for hero background slideshow */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.07);
+  }
+}
+
+.ken-burns-active {
+  animation: kenBurnsZoom 6.5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg {
+    background-attachment: scroll !important;
+  }
+  .ken-burns-active {
+    animation: none !important;
+  }
+}

@@ -472,48 +472,66 @@ export const TESTIMONIALS: TestimonialItem[] = [
   { id: 24, quote: "Speech Therapist Lawrence was amazing! He helped me regain my communication skills after my stroke with his patience and creativity. I'm so grateful for his support.", patient: "Linda T.", discipline: "Speech Therapy" },
 ];
 
+export const HERO_SLIDES = [
+  {
+    image: "/images/hero-slide-1.jpg",
+    alt: "Compassionate nurse supporting a senior patient at home",
+    caption: "24/7 Skilled Nursing Support",
+  },
+  {
+    image: "/images/hero-home-care.jpg",
+    alt: "Smiling Tri-Valley nurse reviewing a health checkup report with a senior patient at home",
+    caption: "Comfort & Safety in Your Home",
+  },
+  {
+    image: "/images/hero-slide-3.jpg",
+    alt: "Family and caregiver assisting with gentle home rehabilitation exercises",
+    caption: "Personalized & Dedicated Care",
+  },
+];
+
 export const CASE_HIGHLIGHTS = [
   {
     category: "Senior Care",
     title: "Elderly Care Assistance",
     description:
-      "Provided daily personal care and medical support for an elderly client, ensuring comfort and safety at home.",
-    image: "/images/care-reassuring.jpg",
+      "Provided daily personal care and medical support for an elderly client, ensuring comfort and health at home.",
+    image: "/images/work-slide-1.jpg",
   },
   {
     category: "Medical Care",
     title: "Post-Surgery Recovery",
     description:
       "Assisted a client with rehabilitation and wound care after surgery, ensuring a smooth and safe recovery at home.",
-    image: "/images/care-exam.jpg",
+    image: "/images/work-slide-2.jpg",
   },
   {
     category: "Health Monitoring",
     title: "Chronic Illness Management",
     description:
-      "Delivered ongoing care for a client with diabetes, focusing on regular monitoring, medication, and lifestyle support.",
-    image: "/images/care-water.jpg",
+      "Delivered ongoing care for a client with diabetes, focusing on regular monitoring, medication, and lifestyle adjustments.",
+    image: "/images/work-slide-3.jpg",
   },
   {
     category: "Family Relief",
     title: "Respite Care Support",
     description:
-      "Provided trusted temporary care for a loved one, allowing the primary family caregiver time to rest and recharge.",
-    image: "/images/care-family.jpg",
+      "Provided temporary care for a client’s loved one, allowing the primary caregiver time to rest and recharge.",
+    image: "/images/work-slide-4.jpg",
   },
   {
     category: "Comfort & Dignity",
     title: "Palliative Care Assistance",
     description:
-      "Offered compassionate palliative nursing support to preserve comfort and dignity during sensitive stages of care.",
-    image: "/images/care-coffee.jpg",
+      "Offered compassionate palliative care to ensure comfort and dignity for a client during sensitive stages of care.",
+    image: "/images/work-slide-5.jpg",
   },
   {
     category: "Daily Living",
     title: "Personal Hygiene Support",
     description:
-      "Helped a client with mobility challenges through dignified daily hygiene routines, improving overall quality of life.",
-    image: "/images/care-hair.jpg",
+      "Helped a client with mobility issues by assisting with daily hygiene routines, improving their quality of life.",
+    image: "/images/work-slide-6.jpg",
   },
 ];
 
