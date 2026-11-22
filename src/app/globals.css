@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #023D69;
+  --color-navy-dark: #012B4B;
+  --color-pink: #F0418C;
+  --color-pink-aa: #C2185B;
+  --color-pink-deep: #9D174D;
+  --color-blush: #FFBFDF;
+  --color-blush-border: #FBCFE8;
+  --color-canvas: #FFF9FC;
+  --color-slate-blue: #4A7995;
+}
+
+@theme inline {
+  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --color-brand-navy: #023D69;
+  --color-brand-pink: #F0418C;
+  --color-brand-pink-aa: #C2185B;
+  --color-brand-blush: #FFBFDF;
+  --color-brand-canvas: #FFF9FC;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  font-family: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Smooth focus ring for WCAG AA accessibility */
+*:focus-visible {
+  outline: 2px solid #F0418C;
+  outline-offset: 2px;
+}
