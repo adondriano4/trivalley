@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Printer, CheckCircle2 } from "lucide-react";
+import { Phone, MapPin, Printer, CheckCircle2 } from "lucide-react";
 import { SERVICES, SITE_INFO } from "@/data/site-data";
 
 export default function Footer() {
@@ -22,12 +22,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
           {/* Brand & Stockton HQ */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-white rounded-xl p-1.5 shadow-sm shrink-0">
+            <div className="flex items-center gap-3.5 mb-4">
+              <div className="bg-white rounded-2xl px-3 py-2 shadow-sm shrink-0">
                 <img
-                  src="/images/trivalley-icon.png"
-                  alt="Tri-Valley Icon"
-                  className="h-8 w-auto"
+                  src="/images/logo-full.png"
+                  alt="Tri-Valley Logo"
+                  className="h-14 sm:h-16 w-auto object-contain"
                 />
               </div>
               <div>
@@ -58,13 +58,6 @@ export default function Footer() {
                 <Printer className="w-4 h-4 text-[#FFBFDF] shrink-0" />
                 <span>Fax: {SITE_INFO.fax}</span>
               </div>
-              <a
-                href={`mailto:${SITE_INFO.email}`}
-                className="flex items-center gap-2 hover:text-[#FFBFDF] transition-colors"
-              >
-                <Mail className="w-4 h-4 text-[#FFBFDF] shrink-0" />
-                <span>{SITE_INFO.email}</span>
-              </a>
             </div>
           </div>
 
@@ -105,10 +98,6 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <div className="text-xs text-slate-300 bg-white/5 rounded-xl p-3 border border-white/10">
-              <strong className="text-[#FFBFDF] block mb-1">4 Counties Served</strong>
-              Alameda · San Joaquin · Stanislaus · Sacramento
-            </div>
           </div>
 
           {/* Clinical Services */}
@@ -166,16 +155,16 @@ export default function Footer() {
               </form>
             )}
 
-            <div className="mt-5 flex items-center gap-3 bg-white rounded-xl px-3 py-2 w-fit">
+            <div className="mt-5 w-full flex items-center justify-evenly gap-4">
               <img
                 src="/images/chap-seal.png"
                 alt="CHAP Standards of Excellence Accredited"
-                className="h-9 w-auto"
+                className="h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.45)]"
               />
               <img
                 src="/images/cms-seal.png"
                 alt="CMS Medicare & Medi-Cal Certified"
-                className="h-8 w-auto"
+                className="h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.55)]"
               />
             </div>
           </div>

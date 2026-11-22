@@ -63,8 +63,8 @@ export default function ServicesSlider() {
                     alt={service.imageAlt}
                     className="w-full h-full object-cover object-[center_22%] transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#023D69]/35 via-transparent to-transparent" />
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 border border-[#FBCFE8] text-[11px] font-bold text-[#9D174D] shadow-xs">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#023D69]/55 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-max max-w-[90%] px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-xs border border-[#FBCFE8] text-[11px] font-bold text-[#9D174D] text-center shadow-md">
                     {service.tagline}
                   </div>
                 </div>

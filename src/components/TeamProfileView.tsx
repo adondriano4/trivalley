@@ -54,9 +54,9 @@ export default function TeamProfileView({ member }: { member: TeamMember }) {
               <div className="text-center sm:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-[#FFBFDF]/40 text-[#FFBFDF] text-xs font-bold mb-2">
                   <img
-                    src="/images/trivalley-icon.png"
-                    alt=""
-                    className="h-3.5 w-auto bg-white rounded-full p-0.5"
+                    src="/images/logo-full.png"
+                    alt="Tri-Valley Logo"
+                    className="h-4 w-auto bg-white rounded-full p-0.5 object-contain"
                   />
                   <span>Tri-Valley Leadership</span>
                 </div>

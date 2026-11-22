@@ -58,7 +58,6 @@ export const SITE_INFO = {
   phone: "(209) 957-0708",
   phoneHref: "tel:+12099570708",
   fax: "(209) 957-7866",
-  email: "info@trivalleyhomehealth.com",
   address: "1231 West Robinhood Dr., Suite D5, Stockton, CA 95207",
   shortAddress: "1231 W Robinhood Dr, Ste D5, Stockton, CA 95207",
   hours: "Monday – Friday: 8:30 AM – 5:00 PM (24/7 On-Call Nursing)",
@@ -545,9 +544,9 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Accreditation & Quality",
     excerpt:
       "Licensed by the California Department of Health Services and accredited by CHAP, Tri-Valley holds Medicare & Medi-Cal certification to serve families across four Northern California counties.",
-    image: "/images/care-teamwork.png",
+    image: "/images/care-coffee.jpg",
     imageAlt:
-      "Two Tri-Valley Home Health nurses collaborating on patient quality standards",
+      "Smiling Tri-Valley home health clinician serving coffee to a senior patient at home",
     badges: ["CA DHS Licensed", "CHAP Accredited", "CMS Medicare & Medi-Cal Certified"],
     content: [
       "Licensed by the California Department of Health Services and proudly accredited by the Community Health Accreditation Partner (CHAP), Tri-Valley Home Health Care, Inc. holds Medicare and Medi-Cal certification reflecting rigorous clinical quality and safety standards.",

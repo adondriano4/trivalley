@@ -26,10 +26,6 @@ export const metadata: Metadata = {
   },
   description:
     "State-licensed, CHAP-accredited, and Medicare & Medi-Cal certified home health care serving Alameda, San Joaquin, Stanislaus, and Sacramento counties since 2000.",
-  icons: {
-    icon: "/images/trivalley-icon.png",
-    apple: "/images/trivalley-icon.png",
-  },
 };
 
 export default function RootLayout({

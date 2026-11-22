@@ -43,7 +43,7 @@ export default function LegalDisclaimerPage() {
             <Link href="/privacy-policy" className="font-bold text-[#C2185B] underline">
               Privacy Policy
             </Link>
-            . Questions? Reach us at {SITE_INFO.phone} or {SITE_INFO.email}.
+            . Questions? Call us at {SITE_INFO.phone} or fax {SITE_INFO.fax}.
           </p>
         </div>
       </article>

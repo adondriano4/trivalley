@@ -188,9 +188,9 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-[#FBCFE8] px-4 py-4 shadow-xl max-h-[82vh] overflow-y-auto">
           <div className="flex items-center gap-2.5 pb-3 mb-3 border-b border-[#FCE7F3]">
             <img
-              src="/images/trivalley-icon.png"
-              alt="Tri-Valley Icon"
-              className="h-7 w-auto"
+              src="/images/logo-full.png"
+              alt="Tri-Valley Logo"
+              className="h-8 w-auto object-contain"
             />
             <div>
               <div className="text-xs font-bold text-[#023D69]">

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Briefcase, CheckCircle2, MapPin, Upload, Send } from "lucide-react";
+import { Briefcase, CheckCircle2, MapPin, Upload, Send, AlertCircle } from "lucide-react";
 import { CAREER_POSITIONS, SITE_INFO } from "@/data/site-data";
 
 export default function CareerPage() {
@@ -10,14 +10,48 @@ export default function CareerPage() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [fileName, setFileName] = useState("");
   const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [deliveryNote, setDeliveryNote] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!firstName.trim() || !email.trim()) return;
-    setSubmitted(true);
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !phone.trim()) return;
+    setSubmitting(true);
+    setErrorMsg("");
+
+    try {
+      const fd = new FormData();
+      fd.append("firstName", firstName);
+      fd.append("lastName", lastName);
+      fd.append("email", email);
+      fd.append("phone", phone);
+      fd.append("position", selectedRole);
+      fd.append("message", message);
+      if (resumeFile) {
+        fd.append("resume", resumeFile);
+      }
+
+      const res = await fetch("/api/career", {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setErrorMsg(data.error || "Unable to submit application right now.");
+      } else {
+        setDeliveryNote(data.note || "");
+        setSubmitted(true);
+      }
+    } catch {
+      setErrorMsg("Network error. Please call (209) 957-0708 for hiring inquiries.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -84,8 +118,9 @@ export default function CareerPage() {
                   Application Received!
                 </h3>
                 <p className="text-sm text-slate-600 mb-5">
-                  Thank you, {firstName}. Our hiring coordinator will review your interest in{" "}
-                  <strong>{selectedRole}</strong>. Questions? Call{" "}
+                  {deliveryNote ||
+                    `Thank you, ${firstName}. Our hiring coordinator will review your interest in ${selectedRole}.`}{" "}
+                  Questions? Call{" "}
                   <a href={SITE_INFO.phoneHref} className="font-bold text-[#C2185B]">
                     {SITE_INFO.phone}
                   </a>
@@ -93,7 +128,11 @@ export default function CareerPage() {
                 </p>
                 <button
                   type="button"
-                  onClick={() => setSubmitted(false)}
+                  onClick={() => {
+                    setSubmitted(false);
+                    setResumeFile(null);
+                    setFileName("");
+                  }}
                   className="px-5 py-2 rounded-full border border-[#F9A8D4] text-sm font-bold text-[#023D69] cursor-pointer"
                 >
                   Submit Another Application
@@ -107,6 +146,13 @@ export default function CareerPage() {
                 <h2 className="font-display text-xl font-extrabold text-[#023D69]">
                   Apply Now
                 </h2>
+
+                {errorMsg && (
+                  <div className="flex items-center gap-2 rounded-xl bg-rose-50 border border-rose-200 px-3.5 py-2.5 text-xs font-semibold text-rose-800">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
@@ -200,9 +246,11 @@ export default function CareerPage() {
                     type="file"
                     accept=".pdf,.doc,.docx"
                     className="sr-only"
-                    onChange={(e) =>
-                      setFileName(e.target.files?.[0]?.name || "")
-                    }
+                    onChange={(e) => {
+                      const file = e.target.files?.[0] || null;
+                      setResumeFile(file);
+                      setFileName(file?.name || "");
+                    }}
                   />
                 </div>
 
@@ -222,10 +270,11 @@ export default function CareerPage() {
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F0418C] hover:bg-[#C2185B] text-white font-bold text-sm py-3 shadow-md transition-colors cursor-pointer"
+                  disabled={submitting}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F0418C] hover:bg-[#C2185B] disabled:opacity-60 text-white font-bold text-sm py-3 shadow-md transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  Submit Application
+                  <span>{submitting ? "Submitting..." : "Submit Application"}</span>
                 </button>
               </form>
             )}

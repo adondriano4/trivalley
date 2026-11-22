@@ -19,9 +19,9 @@ export default function AboutUsPage() {
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-4">
               <img
-                src="/images/trivalley-icon.png"
-                alt=""
-                className="h-4 w-auto"
+                src="/images/logo-full.png"
+                alt="Tri-Valley Logo"
+                className="h-5 w-auto object-contain"
               />
               <span>Est. 2000 · 25+ Years in San Joaquin County</span>
             </div>
@@ -56,7 +56,7 @@ export default function AboutUsPage() {
                 alt="Tri-Valley founder Necita Tecson Manapul, RN caring for a senior patient in a wheelchair"
                 className="w-full h-80 sm:h-[410px] object-cover object-[center_20%]"
               />
-              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-2xl border border-[#FBCFE8] px-4 py-2.5 shadow-md">
+              <div className="absolute top-1/2 -translate-y-1/2 right-4 bg-white/95 backdrop-blur-sm rounded-2xl border border-[#FBCFE8] px-4 py-2.5 shadow-md max-w-[260px]">
                 <div className="font-display font-extrabold text-xs text-[#023D69]">
                   Necita Tecson Manapul, RN · Founder &amp; CEO
                 </div>

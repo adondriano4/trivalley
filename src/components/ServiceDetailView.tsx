@@ -24,9 +24,9 @@ export default function ServiceDetailView({ service }: { service: ServiceItem })
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-4 shadow-xs">
                 <img
-                  src="/images/trivalley-icon.png"
-                  alt=""
-                  className="h-4 w-auto"
+                  src="/images/logo-full.png"
+                  alt="Tri-Valley Logo"
+                  className="h-5 w-auto object-contain"
                 />
                 <span>{service.tagline}</span>
               </div>

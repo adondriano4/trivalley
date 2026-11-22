@@ -19,9 +19,9 @@ export default function MiniGoogleMaps({
       <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 bg-[#FFF9FC] border-b border-[#FCE7F3]">
         <div className="flex items-center gap-2">
           <img
-            src="/images/trivalley-icon.png"
-            alt="Tri-Valley Pin"
-            className="h-5 w-auto"
+            src="/images/logo-full.png"
+            alt="Tri-Valley Logo"
+            className="h-6 w-auto object-contain"
           />
           <span className="font-display font-bold text-xs sm:text-sm text-[#023D69]">
             Stockton Headquarters · Mini Google Map
@@ -125,11 +125,11 @@ export default function MiniGoogleMaps({
 
             {/* Custom Tri-Valley Pin */}
             <div className="absolute top-[42%] left-[72%] -translate-x-1/2 -translate-y-full flex flex-col items-center">
-              <div className="w-11 h-11 rounded-full bg-white border-[3px] border-[#F0418C] shadow-lg flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-white border-[3px] border-[#F0418C] shadow-lg flex items-center justify-center p-1">
                 <img
-                  src="/images/trivalley-icon.png"
+                  src="/images/logo-full.png"
                   alt="Tri-Valley HQ Marker"
-                  className="w-7 h-auto"
+                  className="w-9 h-auto object-contain"
                 />
               </div>
               <div className="w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[10px] border-t-[#F0418C] -mt-0.5" />

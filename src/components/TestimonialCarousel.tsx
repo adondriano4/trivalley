@@ -23,7 +23,7 @@ export default function TestimonialCarousel() {
       ? TESTIMONIALS
       : TESTIMONIALS.filter((t) => t.discipline === filter);
 
-  const perPage = 3;
+  const perPage = 2;
   const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
   const safePage = page >= totalPages ? 0 : page;
   const visible = filtered.slice(safePage * perPage, safePage * perPage + perPage);
@@ -77,8 +77,8 @@ export default function TestimonialCarousel() {
         </div>
       </div>
 
-      {/* 3-Card Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {/* 2-Card Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {visible.map((item) => (
           <article
             key={item.id}

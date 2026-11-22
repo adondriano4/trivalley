@@ -17,7 +17,7 @@ export default function ServicesHubPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-3">
-              <img src="/images/trivalley-icon.png" alt="" className="h-4 w-auto" />
+              <img src="/images/logo-full.png" alt="Tri-Valley Logo" className="h-5 w-auto object-contain" />
               <span>What We Offer · Multidisciplinary Home Health</span>
             </div>
             <h1 className="font-display text-3xl sm:text-5xl font-extrabold text-[#023D69] tracking-tight mb-3">
@@ -44,17 +44,19 @@ export default function ServicesHubPage() {
               key={srv.slug}
               className="bg-white rounded-3xl border border-[#FBCFE8] overflow-hidden shadow-xs hover:shadow-[0_14px_34px_rgba(240,65,140,0.14)] hover:border-[#F0418C] transition-all flex flex-col"
             >
-              <img
-                src={srv.image}
-                alt={srv.imageAlt}
-                className="w-full h-56 object-cover object-[center_22%]"
-              />
+              <div className="relative">
+                <img
+                  src={srv.image}
+                  alt={srv.imageAlt}
+                  className="w-full h-56 object-cover object-[center_22%]"
+                />
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-max max-w-[90%] px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-xs border border-[#FBCFE8] text-[11px] font-bold text-[#9D174D] text-center shadow-md">
+                  {srv.tagline}
+                </div>
+              </div>
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#C2185B]">
-                    {srv.tagline}
-                  </span>
-                  <h2 className="font-display text-xl font-extrabold text-[#023D69] mt-1 mb-2.5">
+                  <h2 className="font-display text-xl font-extrabold text-[#023D69] mb-2.5">
                     {srv.title}
                   </h2>
                   <p className="text-sm text-slate-600 leading-relaxed mb-4">

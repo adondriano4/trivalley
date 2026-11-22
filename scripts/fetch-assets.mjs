@@ -47,6 +47,9 @@ const WORK_SLIDE_URLS = {
   "work-slide-6.jpg": "https://trivalleyhomehealth.com/wp-content/uploads/2024/12/slid6.png",
 };
 
+const ANNIVERSARY_BADGE_URL =
+  "https://trivalleyhomehealth.com/wp-content/uploads/2025/03/20250328020313-0-Blue-and-Yellow-Group-Anniversary-Instagram-Post-1.png";
+
 async function fetchBuffer(url) {
   const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
   if (!res.ok) throw new Error(`Failed ${url}: ${res.status}`);
@@ -73,6 +76,13 @@ async function run() {
       await sharp(buf).resize(1200, 800, { fit: "cover" }).jpeg({ quality: 84, mozjpeg: true }).toFile(dest);
     })
   );
+
+  // Resize 25th Anniversary Silver Jubilee emblem
+  const badgeDest = path.join(outDir, "anniversary-25-badge.png");
+  if (!fs.existsSync(badgeDest)) {
+    const bBuf = await fetchBuffer(ANNIVERSARY_BADGE_URL);
+    await sharp(bBuf).resize(520, 520, { fit: "inside" }).png({ compressionLevel: 9, palette: true }).toFile(badgeDest);
+  }
 
   // Convert skilled nursing WebP to PNG
   const snDest = path.join(outDir, "service-skilled-nursing.png");

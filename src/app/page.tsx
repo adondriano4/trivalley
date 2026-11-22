@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Phone,
   ArrowRight,
   CheckCircle2,
   HeartHandshake,
@@ -11,12 +10,11 @@ import {
   Home,
   Star,
 } from "lucide-react";
-import { BLOG_POSTS, SITE_INFO } from "@/data/site-data";
+import { BLOG_POSTS, SITE_INFO, TEAM_MEMBERS } from "@/data/site-data";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import VimeoIntroPlayer from "@/components/VimeoIntroPlayer";
 import ServicesSlider from "@/components/ServicesSlider";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
-import TeamSlider from "@/components/TeamSlider";
 import WorkShowcaseSlider from "@/components/WorkShowcaseSlider";
 import MiniGoogleMaps from "@/components/MiniGoogleMaps";
 import CareInquiryForm from "@/components/CareInquiryForm";
@@ -24,14 +22,14 @@ import CareInquiryForm from "@/components/CareInquiryForm";
 export default function HomePage() {
   return (
     <div className="bg-white">
-      {/* 1. HERO KEN BURNS SLIDESHOW (Matches Original 3-Photo Hero) */}
+      {/* 1. HERO KEN BURNS SLIDESHOW + 25TH ANNIVERSARY SILVER JUBILEE BADGE */}
       <HeroSlideshow />
 
       {/* 2. ABOUT US (MISSION + mission1.jpeg) & AUTOPLAY VIMEO INTRO */}
       <section className="py-14 sm:py-18 bg-gradient-to-b from-[#FFF9FC] to-white border-b border-[#FCE7F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            {/* Left: mission1.jpeg + Signature Asymmetric Pink-Bordered Mission Card */}
+            {/* Left: mission1.jpeg + Center-Right Label + Signature Pink-Bordered Mission Card */}
             <div className="lg:col-span-6 space-y-5">
               <div className="relative rounded-3xl overflow-hidden border-2 border-[#FBCFE8] shadow-[0_18px_42px_rgba(2,61,105,0.12)]">
                 <img
@@ -39,11 +37,11 @@ export default function HomePage() {
                   alt="Founder Necita Tecson Manapul, RN caring warmly for a senior patient in a wheelchair"
                   className="w-full h-72 sm:h-84 object-cover object-[center_20%]"
                 />
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm border border-[#F9A8D4] rounded-full px-3.5 py-1.5 flex items-center gap-2 shadow-md">
+                <div className="absolute top-1/2 -translate-y-1/2 right-4 bg-white/95 backdrop-blur-sm border border-[#F9A8D4] rounded-full px-3.5 py-1.5 flex items-center gap-2 shadow-md">
                   <img
-                    src="/images/trivalley-icon.png"
-                    alt="Tri-Valley Icon"
-                    className="h-4 w-auto"
+                    src="/images/logo-full.png"
+                    alt="Tri-Valley Logo"
+                    className="h-5 w-auto object-contain"
                   />
                   <span className="font-display font-bold text-xs text-[#023D69]">
                     About Us · Est. 2000
@@ -116,14 +114,12 @@ export default function HomePage() {
           backgroundImage: "url('/images/parallax-why.jpg')",
         }}
       >
-        {/* Original Pink Blush + Deep Navy Gradient Overlay */}
         <div
           className="absolute inset-0 bg-gradient-to-br from-[#023D69]/90 via-[#023D69]/80 to-[#F0418C]/65"
           aria-hidden="true"
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          {/* Why Choose Us Row */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5">
               <span className="inline-block px-3.5 py-1 rounded-full bg-[#FFBFDF] text-[#023D69] text-xs font-extrabold uppercase tracking-wider mb-3">
@@ -149,7 +145,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 35k+ & 25k+ Impact Counters */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white/95 backdrop-blur-md text-[#023D69] rounded-3xl p-6 border-b-4 border-[#F0418C] shadow-xl">
                 <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#C2185B]">
@@ -176,7 +171,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* How It Works (3 Concise Steps) */}
           <div className="pt-8 border-t border-white/20">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
               <h3 className="font-display text-xl sm:text-2xl font-extrabold">
@@ -226,40 +220,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PARALLAX BAND 2: WHAT THEY'RE SAYING (INTERACTIVE TESTIMONIAL SLIDES) */}
+      {/* 5. PARALLAX BAND 2: WHAT THEY'RE SAYING (ORIGINAL CUTOUT + INTERACTIVE TESTIMONIAL SLIDES) */}
       <section
-        className="parallax-bg relative py-14 sm:py-18 border-b border-[#FBCFE8]"
+        className="parallax-bg relative pt-14 sm:pt-18 pb-0 border-b border-[#FBCFE8]"
         style={{
           backgroundImage: "url('/images/parallax-testimonials.jpg')",
         }}
       >
-        {/* Warm Blush Overlay Matching Original Testimonial Parallax */}
         <div
           className="absolute inset-0 bg-gradient-to-b from-[#FFF9FC]/90 via-[#FFBFDF]/78 to-[#FFF9FC]/92 backdrop-blur-[1px]"
           aria-hidden="true"
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-2 shadow-2xs">
-                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                <span>5-Star Care · Greater Future</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-5 flex justify-center self-end order-2 lg:order-1">
+              <img
+                src="/images/care-teamwork.png"
+                alt="Two confident Tri-Valley Home Health clinicians in medical uniforms"
+                className="block w-full max-w-sm lg:max-w-md h-auto object-contain drop-shadow-[0_14px_28px_rgba(2,61,105,0.2)]"
+              />
+            </div>
+
+            <div className="lg:col-span-7 pb-4 lg:pb-16 order-1 lg:order-2">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-2 shadow-2xs">
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
+                  <span>5-Star Care · Greater Future</span>
+                </div>
+                <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#023D69]">
+                  What They&rsquo;re Saying
+                </h2>
               </div>
-              <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#023D69]">
-                What They&rsquo;re Saying
-              </h2>
+
+              <TestimonialCarousel />
             </div>
           </div>
-
-          <TestimonialCarousel />
         </div>
       </section>
 
-      {/* 6. OUR DEDICATED TEAM — INTERACTIVE LEADERSHIP SLIDER */}
+      {/* 6. OUR DEDICATED TEAM — STATIC GRID WITH LARGE PORTRAITS & VIEW MORE */}
       <section id="team" className="py-14 sm:py-18 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9FC] border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-2">
                 <Users className="w-3.5 h-3.5" />
@@ -278,7 +281,38 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <TeamSlider />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TEAM_MEMBERS.map((member) => (
+              <div
+                key={member.slug}
+                className="bg-[#FFF9FC]/80 hover:bg-white rounded-3xl border border-[#FBCFE8] hover:border-[#F0418C] p-6 text-center shadow-[0_6px_22px_rgba(2,61,105,0.05)] hover:shadow-[0_14px_30px_rgba(240,65,140,0.16)] transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-40 h-40 sm:w-44 sm:h-44 rounded-full mx-auto mb-5 p-1.5 bg-gradient-to-tr from-[#F0418C] to-[#FFBFDF] shadow-lg">
+                    <img
+                      src={member.image}
+                      alt={member.imageAlt}
+                      className="w-full h-full rounded-full object-cover object-top bg-white"
+                    />
+                  </div>
+                  <h3 className="font-display font-extrabold text-base text-[#023D69] mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-bold text-[#C2185B] mb-4 min-h-[2rem]">
+                    {member.shortRole}
+                  </p>
+                </div>
+
+                <Link
+                  href={`/${member.slug}`}
+                  className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-full bg-white border border-[#F9A8D4] hover:bg-[#F0418C] hover:border-[#F0418C] text-[#023D69] hover:text-white font-bold text-xs shadow-2xs transition-colors"
+                >
+                  <span>View More</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -308,7 +342,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. PARALLAX BAND 3: SERVICE AREA + MINI GOOGLE MAPS + MAKE AN APPOINTMENT */}
+      {/* 8. PARALLAX BAND 3: EQUAL-HEIGHT SERVICE AREA + MINI MAPS & SEND US A MESSAGE */}
       <section
         id="location"
         className="parallax-bg relative py-16 sm:py-20 border-b border-[#FBCFE8]"
@@ -322,8 +356,8 @@ export default function HomePage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-6 space-y-5 text-white">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-stretch">
+            <div className="lg:col-span-6 flex flex-col justify-between gap-5 text-white">
               <div>
                 <span className="inline-block px-3.5 py-1 rounded-full bg-[#FFBFDF] text-[#023D69] text-xs font-extrabold uppercase tracking-wider mb-3">
                   Service Area · Make an Appointment
@@ -349,8 +383,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <CareInquiryForm compact heading="Send Us a Message" />
+            <div className="lg:col-span-6 flex flex-col">
+              <CareInquiryForm compact fullHeight heading="Send Us a Message" />
             </div>
           </div>
         </div>

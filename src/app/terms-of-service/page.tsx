@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
             <p className="text-sm">
               {SITE_INFO.name} · {SITE_INFO.address}
               <br />
-              Phone: {SITE_INFO.phone} · Email: {SITE_INFO.email}
+              Phone: {SITE_INFO.phone} · Fax: {SITE_INFO.fax}
             </p>
           </section>
         </div>

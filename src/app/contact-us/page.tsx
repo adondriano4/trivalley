@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import { Phone, Printer, MapPin, Clock, Mail, CheckCircle2 } from "lucide-react";
+import { Phone, Printer, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { SITE_INFO } from "@/data/site-data";
 import MiniGoogleMaps from "@/components/MiniGoogleMaps";
 import CareInquiryForm from "@/components/CareInquiryForm";
@@ -17,7 +17,7 @@ export default function ContactUsPage() {
       <section className="bg-gradient-to-br from-[#FFF9FC] via-white to-[#FDF2F8] border-b border-[#FBCFE8] py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#FBCFE8] text-[#C2185B] text-xs font-bold mb-3">
-            <img src="/images/trivalley-icon.png" alt="" className="h-4 w-auto" />
+            <img src="/images/logo-full.png" alt="Tri-Valley Logo" className="h-5 w-auto object-contain" />
             <span>Stockton Headquarters · 24/7 On-Call Nursing</span>
           </div>
           <h1 className="font-display text-3xl sm:text-5xl font-extrabold text-[#023D69] tracking-tight mb-3">
@@ -60,8 +60,7 @@ export default function ContactUsPage() {
                   Mon – Fri: 8:30 AM – 5:00 PM
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-slate-600 mt-1">
-                  <Mail className="w-3.5 h-3.5 text-[#4A7995]" />
-                  <span>{SITE_INFO.email}</span>
+                  <span>24/7 On-Call Registered Nursing</span>
                 </div>
               </div>
             </div>

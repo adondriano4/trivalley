@@ -59,11 +59,11 @@ export default function VimeoIntroPlayer() {
       {/* Top Film Strip Bar */}
       <div className="flex items-center justify-between px-4 sm:px-5 py-2.5 bg-[#023D69] border-b border-white/10 text-white text-xs">
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white p-0.5">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white p-0.5">
             <img
-              src="/images/trivalley-icon.png"
-              alt="Tri-Valley Icon"
-              className="h-3.5 w-auto"
+              src="/images/logo-full.png"
+              alt="Tri-Valley Logo"
+              className="h-5 w-auto object-contain"
             />
           </span>
           <span className="font-display font-bold">
